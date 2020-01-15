@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row  ">
+    <div class="col mt-5">
+      <h2 class="ml-5">*nglf</h2>
+      <div
+        *ngIf="tarjeta === 'tarjeta'" 
+      
+        class=" ml-5 card text-white bg-danger mb-3 mt-4"
+        style="max-width: 18rem;">
+        <div class="card-header">Header</div>
+        <div class="card-body">
+          <h5 class="card-title">{{ frase.autor }}</h5>
+          <p class="card-text">{{ frase.mensaje }}</p>
+        </div>
+      </div>
+      <button  type="button" class="btn btn-warning ml-5 ">
+        Mostrar/Ocultar
+      </button>
+    </div>
+    <div class="col mt-5">
+      <h2 class="">*ngFor</h2>
+      <ul class="list-group">
+        <li *ngFor="let persona of personajes" class="list-group-item">
+          {{ persona }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <h2 class="ml-3">Productos:</h2>
+    <div class="card-columns">
+      <div class="col">
+        <div *ngFor="let producto of productos" class="card">
+          <img
+          src="{{ producto.image }}"
+          class="card-img-top imagenes"
+          alt="..."/>
+         <div class="mb-4 ml-5 mr-5">
+          <span > <b>Nombre: </b>  {{producto.title}} </span> <br>
+          <span > <b>Precio: </b> <i> S/.{{producto.price}}</i>   </span> <br> 
+          <span > <b>Descripción: </b> <i> {{producto.description}}</i>  </span>
+         </div>
+          <hr>  
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <h2>Imagen de perritos</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4" *ngIf="imagen == 'perrito'">
+      <img src="../../../assets/img/perrito.jpg" alt="imagen" class="perrito">
+    </div>
+  </div>
+</div>
